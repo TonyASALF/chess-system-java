@@ -33,28 +33,29 @@ public class King extends ChessPiece {
 
 		Position p = new Position(0, 0);
 
-		// above
+		//> above
 		p.setValues(position.getRow() - 1, position.getColumn());
-//		mat[p.getRow()][p.getColumn()] = this.testaMovimento(p);  //no lugar de:
+		//MINHA VERSÃO - ainda dá erro
+		//mat[p.getRow()][p.getColumn()] = this.testaMovimento(p);  //no lugar de:
 		if (getBoard().positionExists(p) && this.canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// below
+		//> below
 		p.setValues(position.getRow() + 1, position.getColumn());
 
 		if (getBoard().positionExists(p) && this.canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// left
+		//> left
 		p.setValues(position.getRow(), position.getColumn() - 1);
 
 		if (getBoard().positionExists(p) && this.canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
 
-		// right
+		//> right
 		p.setValues(position.getRow(), position.getColumn() + 1);
 
 		if (getBoard().positionExists(p) && this.canMove(p)) {
