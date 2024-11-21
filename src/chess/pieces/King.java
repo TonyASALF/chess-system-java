@@ -22,7 +22,7 @@ public class King extends ChessPiece {
 	}
 	
 	//feito por mim - reduzir código que testa o movimento
-	private boolean testaMovimento(Position p) {
+	private boolean eMovimentoValido(Position p) {
 		return getBoard().positionExists(p) && this.canMove(p);
 	}
 
@@ -35,8 +35,7 @@ public class King extends ChessPiece {
 
 		//> above
 		p.setValues(position.getRow() - 1, position.getColumn());
-		//MINHA VERSÃO - ainda dá erro
-		//mat[p.getRow()][p.getColumn()] = this.testaMovimento(p);  //no lugar de:
+		
 		if (getBoard().positionExists(p) && this.canMove(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
 		}
